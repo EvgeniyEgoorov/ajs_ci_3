@@ -32,7 +32,7 @@ beforeEach(() => {
 });
 test.each([
     [{ status: 'ok', level: 5 }, 'Ваш текущий уровень: 5'],
-    [{ status: 'nok' }, 'Информация об уровне временно недоступна']
+    [{ status: 'nok', level: undefined }, 'Информация об уровне временно недоступна'],
 ])('test getting level', (object, expectedResult) => {
     fetchData.mockReturnValue(object);
     const result = getLevel(1);
